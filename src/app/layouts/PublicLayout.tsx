@@ -1,18 +1,11 @@
-import { Inter } from 'next/font/google';
-import cn from 'classnames';
-
-const interSans = Inter({
-  variable: '--font-inter-sans',
-  subsets: ['latin'],
-});
+import { Header } from '@/src/widgets/Header';
+import s from './PublicLayout.module.css';
 
 export function PublicLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className={cn(interSans.variable)}>
-      <header>
-        Header
-      </header>
-      <main>
+    <div className={s.layoutWrapper}>
+      <Header />
+      <main className={s.contentWrapper}>
         {children}
       </main>
     </div>

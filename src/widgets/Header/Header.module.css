@@ -1,0 +1,4 @@
+.headerWrapper {
+  padding: var(--layoutPadding);
+  border-bottom: 1px solid var(--gray0);
+}
