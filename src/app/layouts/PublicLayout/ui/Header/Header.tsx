@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Typography } from '@/src/shared/ui/Typography';
+import { Navigation } from '../Navigation';
 import s from './Header.module.css';
 
 export function Header() {
@@ -21,9 +22,7 @@ export function Header() {
           </Typography>
         </div>
       </div>
-      <div>
-        
-      </div>
+      <Navigation />
     </header>
   );
 }

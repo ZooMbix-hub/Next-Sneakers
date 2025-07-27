@@ -42,6 +42,10 @@
   color: var(--gray3);
 }
 
+.gray3:hover {
+  color: var(--gray2);
+}
+
 .green {
   color: var(--green);
 }

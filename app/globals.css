@@ -23,6 +23,10 @@ body {
   padding: 55px 55px 0px;
 }
 
+ul {
+  list-style-type: none;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

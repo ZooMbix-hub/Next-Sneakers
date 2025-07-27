@@ -1,4 +1,4 @@
-import { Header } from '@/src/widgets/Header';
+import { Header } from './ui/Header';
 import s from './PublicLayout.module.css';
 
 export function PublicLayout({ children }: { children: React.ReactNode }) {
