@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "classnames": "2.5.1",
     "next": "15.4.2",
     "react": "19.1.0",
     "react-dom": "19.1.0"
@@ -21,6 +20,7 @@
     "@types/react-dom": "19",
     "eslint": "9",
     "eslint-config-next": "15.4.2",
-    "typescript": "5"
+    "typescript": "5",
+    "classnames": "2.5.1"
   }
 }
