@@ -1,4 +1,15 @@
 .headerWrapper {
   padding: var(--layoutPadding);
   border-bottom: 1px solid var(--gray0);
+  display: flex;
+}
+
+.company {
+  display: flex;
+  gap: 16px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
 }

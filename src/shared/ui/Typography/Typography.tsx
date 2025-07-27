@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import s from './Typography.module.css';
 
 type TypographyVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'bodyLarge' | 'body' | 'caption';
 type TypographyColor = 'gray0' | 'gray1' | 'gray2' | 'gray3' | 'green' | 'black' | 'white';
@@ -20,7 +21,7 @@ export function Typography(props: TypographyProps) {
   } = props;
 
   return (
-    <span className={cn(variant, weight, color)}>
+    <span className={cn(s[variant], s[weight], s[color])}>
       {children}
     </span>
   );
