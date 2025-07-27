@@ -1,13 +1,17 @@
-import Favorite from './icons/favorite.svg';
-import Profile from './icons/profile.svg';
-import Check from './icons/check.svg';
-import Add from './icons/add.svg';
+import { Basket } from './icons/Basket';
+import { Defferred } from './icons/Deferred';
+import { Profile } from './icons/Profile';
 
 export const Icon = {
-  Favorite,
-  Profile,
-  Check,
-  Add
+  Basket,
+  Defferred,
+  Profile
 };
 
 export type IconType = keyof typeof Icon;
+
+export interface IconProps {
+  width?: number;
+  height?: number;
+  color?: string;
+}

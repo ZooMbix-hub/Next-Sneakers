@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Icon } from '@/src/assets';
 import { ROUTES } from '@/src/shared/routes';
 import { Typography } from '@/src/shared/ui/Typography';
 import s from './Navigation.module.css';
@@ -8,17 +9,21 @@ export function Navigation() {
     <nav>
       <ul className={s.linkContainer}>
         <li>
-          <Link href={ROUTES.basket}></Link>
+          <Link className={s.link} href={ROUTES.basket}>
+            <Icon.Basket />
+          </Link>
         </li>
         <li>
-          <Link href={ROUTES.deferred}>
+          <Link className={s.link} href={ROUTES.deferred}>
+            <Icon.Defferred />
             <Typography color={'gray3'}>
               {'Закладки'}
             </Typography>
           </Link>
         </li>
         <li>
-          <Link href={ROUTES.profile}>
+          <Link className={s.link} href={ROUTES.profile}>
+            <Icon.Profile />
             <Typography color={'gray3'}>
               {'Профиль'}
             </Typography>

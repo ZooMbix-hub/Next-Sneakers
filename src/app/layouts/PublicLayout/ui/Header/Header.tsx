@@ -1,12 +1,14 @@
+import Link from 'next/link';
 import Image from 'next/image';
 import { Typography } from '@/src/shared/ui/Typography';
+import { ROUTES } from '@/src/shared/routes';
 import { Navigation } from '../Navigation';
 import s from './Header.module.css';
 
 export function Header() {
   return (
     <header className={s.headerWrapper}>
-      <div className={s.company}>
+      <Link href={ROUTES.main} className={s.company}>
         <Image
           src={'/companyLogo.webp'}
           width={40}
@@ -21,7 +23,7 @@ export function Header() {
             {'Магазин лучших кроссовок'}
           </Typography>
         </div>
-      </div>
+      </Link>
       <Navigation />
     </header>
   );

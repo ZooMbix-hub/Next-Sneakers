@@ -2,3 +2,25 @@
   display: flex;
   gap: 32px;
 }
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.link span {
+  color: var(--gray3);
+}
+
+.link:hover span {
+  color: var(--gray2);
+}
+
+.link svg {
+  color: var(--gray3);
+}
+
+.link:hover svg {
+  color: var(--gray2);
+}
