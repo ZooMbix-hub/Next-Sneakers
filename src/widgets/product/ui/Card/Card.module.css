@@ -5,6 +5,7 @@
 
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 15px;
 
   width: 215px;
@@ -29,5 +30,4 @@
 .price {
   display: flex;
   flex-direction: column;
-  gap: 2px;
 }
