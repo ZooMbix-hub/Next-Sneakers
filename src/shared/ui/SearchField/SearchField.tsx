@@ -1,7 +1,7 @@
 'use client';
 
-import { Icon } from '@/src/assets';
 import { useRef } from 'react';
+import { Icon } from '@/src/assets';
 import s from './SearchField.module.css';
 
 export interface SearchFieldProps {
