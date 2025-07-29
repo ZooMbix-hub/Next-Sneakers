@@ -1,3 +1,4 @@
+import { ArrowRight } from './icons/ArrowRight';
 import { Basket } from './icons/Basket';
 import { Check } from './icons/Check';
 import { Heart } from './icons/Heart';
@@ -13,7 +14,8 @@ export const Icon = {
   Plus,
   Heart,
   HeartFill,
-  Check
+  Check,
+  ArrowRight
 };
 
 export type IconType = keyof typeof Icon;
