@@ -17,7 +17,7 @@ export function Header() {
         />
         <div className={s.info}>
           <Typography variant={'h4'} weight={'bold'}>
-            {'REACT SNEAKERS'}
+            {'NEXT SNEAKERS'}
           </Typography>
           <Typography color={'gray2'}>
             {'Магазин лучших кроссовок'}
