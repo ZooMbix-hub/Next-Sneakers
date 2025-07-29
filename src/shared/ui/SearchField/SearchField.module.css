@@ -1,0 +1,28 @@
+.searchField {
+  padding: 15px 18px;
+  display: flex;
+  border: 1px solid var(--gray0);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.searchField:hover,
+.searchField:focus-within {
+  border-color: var(--gray1);
+}
+
+.searchField svg {
+  margin-right: 10px;
+  color: var(--gray1);
+}
+
+.field {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.field::placeholder {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--gray1);
+}

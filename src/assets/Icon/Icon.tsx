@@ -1,11 +1,13 @@
 import { Basket } from './icons/Basket';
 import { Defferred } from './icons/Deferred';
 import { Profile } from './icons/Profile';
+import { Search } from './icons/Search';
 
 export const Icon = {
   Basket,
   Defferred,
-  Profile
+  Profile,
+  Search
 };
 
 export type IconType = keyof typeof Icon;
