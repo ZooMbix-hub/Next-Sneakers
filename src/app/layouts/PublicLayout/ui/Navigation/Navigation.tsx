@@ -24,7 +24,7 @@ export function Navigation() {
         </li>
         <li>
           <Link className={cn(s.link, {[s.active]: pathname === ROUTES.deferred})} href={ROUTES.deferred}>
-            <Icon.Defferred />
+            <Icon.Heart />
             <Typography color={'gray3'}>
               {'Отложенные'}
             </Typography>

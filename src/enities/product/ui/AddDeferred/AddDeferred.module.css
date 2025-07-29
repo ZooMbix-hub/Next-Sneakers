@@ -1,0 +1,26 @@
+.addDeferred {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  border: 1px solid var(--gray0);
+  border-radius: 8px;
+}
+
+.addDeferred svg {
+  color: var(--gray1);
+}
+
+.active {
+  border: none;
+  background-color: var(--danger0);
+}
+
+.active svg {
+  color: var(--danger1);
+}
