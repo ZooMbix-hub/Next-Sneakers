@@ -38,6 +38,17 @@ input:focus {
   outline: none!important;
 }
 
+button{
+  cursor: pointer;
+  background-color: inherit;
+  border: none;
+}
+
+button::-moz-focus-inner {
+  padding:0;
+  border:0;
+}
+
 ul {
   list-style-type: none;
 }

@@ -1,10 +1,12 @@
 import Image from 'next/image';
+import { AddCart, AddDeferred } from '@/src/enities/product';
 import { Typography } from '@/src/shared/ui/Typography';
 import s from './Card.module.css';
 
 export function Card() {
   return (
     <div className={s.card}>
+      <AddDeferred />
       <Image
         src={'https://boringapi.com/api/v1/static/photos/300.jpeg'}
         alt={'123'}
@@ -25,6 +27,7 @@ export function Card() {
             {'12 999 руб.'}
           </Typography>
         </div>
+        <AddCart />
       </div>
     </div>
   );
