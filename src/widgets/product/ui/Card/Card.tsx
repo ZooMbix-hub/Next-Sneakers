@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { AddCart, AddDeferred } from '@/src/enities/product';
+import { AddCart, AddDeferred } from '@/src/features/product';
 import { Typography } from '@/src/shared/ui/Typography';
 import s from './Card.module.css';
 

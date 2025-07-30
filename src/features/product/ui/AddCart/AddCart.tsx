@@ -1,5 +1,5 @@
-import { IconButton } from '@/src/shared/ui/IconButton';
 import { Icon } from '@/src/assets';
+import { IconButton } from '@/src/shared/ui/IconButton';
 
 export function AddCart() {
   return (
