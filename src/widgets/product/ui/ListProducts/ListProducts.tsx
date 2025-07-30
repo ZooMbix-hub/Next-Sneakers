@@ -1,9 +1,30 @@
+import MOCK_PRODUCTS from '../../../../../products.json';
+import { Card } from '../Card/Card';
 import s from './ListProducts.module.css';
 
-export function ListProducts() {
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  imageURL: string;
+}
+
+export async function ListProducts() {
+  const products:Product[] = await new Promise(resolve => setTimeout(() => resolve(MOCK_PRODUCTS), 3000));
+
   return (
     <div className={s.listProducts}>
-      ListProducts
+      {
+        products.map(({id, name, price, imageURL}) => (
+          <Card
+            key={id}
+            id={id}
+            name={name}
+            price={price}
+            imageURL={imageURL}
+          />
+        ))
+      }
     </div>
   );
 }

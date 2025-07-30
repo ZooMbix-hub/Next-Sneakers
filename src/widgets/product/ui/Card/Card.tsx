@@ -3,19 +3,26 @@ import { AddCart, AddDeferred } from '@/src/features/product';
 import { Typography } from '@/src/shared/ui/Typography';
 import s from './Card.module.css';
 
-export function Card() {
+export interface CardProps {
+  id: number;
+  name: string;
+  price: number;
+  imageURL: string;
+}
+
+export function Card({id, name, price, imageURL}: CardProps) {
   return (
     <div className={s.card}>
       <AddDeferred />
       <Image
-        src={'/productImages/7a39d50a050a17cefa03e810a5372958c37209e7.webp'}
+        src={`/productImages/${imageURL}`}
         alt={'123'}
         width={135}
         height={115}
         className={s.image}
       />
       <Typography>
-        {'Мужские Кроссовки Nike Blazer Mid Suede'}
+        {name}
       </Typography>
       <div className={s.footer}>
         <div className={s.price}>
@@ -23,7 +30,7 @@ export function Card() {
             {'ЦЕНА:'}
           </Typography>
           <Typography weight={'bold'}>
-            {'12 999 руб.'}
+            {`${price} руб.`}
           </Typography>
         </div>
         <AddCart />
