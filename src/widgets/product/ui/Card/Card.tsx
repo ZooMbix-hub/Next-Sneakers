@@ -20,7 +20,6 @@ export function Card() {
       <div className={s.footer}>
         <div className={s.price}>
           <Typography variant={'caption'} color={'gray1'}>
-            <></>
             {'ЦЕНА:'}
           </Typography>
           <Typography weight={'bold'}>
