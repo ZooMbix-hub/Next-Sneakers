@@ -1,4 +1,4 @@
-.addCart {
+.iconButton {
   width: 32px;
   height: 32px;
 
@@ -10,15 +10,15 @@
   justify-content: center;
 }
 
-.addCart svg {
+.iconButton svg {
   width: 16px;
   height: 16px;
 }
 
-.addCart:hover {
+.iconButton:hover {
   border-color: var(--gray1);
 }
 
-.addCart:hover svg {
+.iconButton:hover svg {
   color: var(--gray2);
 }

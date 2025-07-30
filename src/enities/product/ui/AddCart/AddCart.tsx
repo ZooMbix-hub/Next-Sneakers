@@ -1,10 +1,10 @@
+import { IconButton } from '@/src/shared/ui/IconButton';
 import { Icon } from '@/src/assets';
-import s from './AddCart.module.css';
 
 export function AddCart() {
   return (
-    <button className={s.addCart}>
+    <IconButton>
       <Icon.Plus color={'var(--gray1)'} />
-    </button>
+    </IconButton>
   );
 }
