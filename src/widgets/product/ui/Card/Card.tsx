@@ -18,7 +18,7 @@ export function Card({id, name, price, imageURL}: CardProps) {
         src={`/productImages/${imageURL}`}
         alt={'123'}
         width={135}
-        height={115}
+        height={135}
         className={s.image}
       />
       <Typography>
