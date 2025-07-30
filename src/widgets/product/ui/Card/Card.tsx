@@ -8,7 +8,7 @@ export function Card() {
     <div className={s.card}>
       <AddDeferred />
       <Image
-        src={'https://boringapi.com/api/v1/static/photos/300.jpeg'}
+        src={'/productImages/7a39d50a050a17cefa03e810a5372958c37209e7.webp'}
         alt={'123'}
         width={135}
         height={115}
