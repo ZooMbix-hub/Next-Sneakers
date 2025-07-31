@@ -3,9 +3,3 @@
   flex-direction: column;
   gap: 30px;
 }
-
-.header {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
