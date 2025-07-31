@@ -1,5 +1,6 @@
 import type { CardProps } from '@/src/widgets/product/ui/Card/Card';
 import MOCK_PRODUCTS from '../../../products.json';
+import { ProductPage } from '@/src/pages/product';
 
 interface ProductProps {
   params: {
@@ -20,9 +21,5 @@ export async function generateMetadata({ params }: ProductProps) {
 }
 
 export default function Product({ params }: ProductProps) {
-  return (
-    <div>
-      Product
-    </div>
-  );
+  return <ProductPage />;
 }
