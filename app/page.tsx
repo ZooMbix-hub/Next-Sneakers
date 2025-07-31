@@ -1,5 +1,5 @@
-import { MainPage } from '@/src/pages/main';
 import type { Metadata } from 'next';
+import { MainPage } from '@/src/pages/main';
 
 export const metadata: Metadata = {
   title: 'Next Sneakers',
