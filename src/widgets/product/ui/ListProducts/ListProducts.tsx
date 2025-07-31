@@ -10,7 +10,7 @@ interface Product {
 }
 
 export async function ListProducts() {
-  const products:Product[] = await new Promise(resolve => setTimeout(() => resolve(MOCK_PRODUCTS), 2000));
+  const products: Product[] = await new Promise(resolve => setTimeout(() => resolve(MOCK_PRODUCTS), 2000));
 
   return (
     <div className={s.listProducts}>
