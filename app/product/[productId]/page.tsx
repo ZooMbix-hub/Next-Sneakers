@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: ProductProps) {
 
   const product: CardProps = await new Promise(resolve => setTimeout(() => resolve(
     MOCK_PRODUCTS.find(({id}) => id === Number(productId)) as CardProps
-  ), 5000));
+  ), 2000));
 
   return {
     title: product.name

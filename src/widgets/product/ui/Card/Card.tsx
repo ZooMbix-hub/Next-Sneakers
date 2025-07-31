@@ -1,6 +1,8 @@
+import Link from 'next/link';
 import Image from 'next/image';
 import { AddCart, AddDeferred } from '@/src/features/product';
 import { Typography } from '@/src/shared/ui/Typography';
+import { ROUTES } from '@/src/shared/routes';
 import s from './Card.module.css';
 
 export interface CardProps {
@@ -12,11 +14,11 @@ export interface CardProps {
 
 export function Card({id, name, price, imageURL}: CardProps) {
   return (
-    <div className={s.card}>
+    <Link href={ROUTES.product(id)} className={s.card}>
       <AddDeferred />
       <Image
         src={`/productImages/${imageURL}`}
-        alt={'123'}
+        alt={'product image'}
         width={135}
         height={135}
         className={s.image}
@@ -35,6 +37,6 @@ export function Card({id, name, price, imageURL}: CardProps) {
         </div>
         <AddCart />
       </div>
-    </div>
+    </Link>
   );
 }

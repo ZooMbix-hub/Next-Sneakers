@@ -3,5 +3,5 @@ export const ROUTES = {
   deferred: '/deferred',
   profile: '/profile',
   basket: '/basket',
-  product: (alias: string) => `/product/${alias}`
+  product: (alias: number) => `/product/${alias}`
 } as const;
