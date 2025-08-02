@@ -9,8 +9,13 @@ interface Product {
   imageURL: string;
 }
 
-export async function ListProducts() {
+async function getMockData(name: string): Promise<Product[]> {
   const products: Product[] = await new Promise(resolve => setTimeout(() => resolve(MOCK_PRODUCTS), 2000));
+  return products.filter((product) => product.name.toLocaleLowerCase().includes(name.toLocaleLowerCase()));
+}
+
+export async function ListProducts({ searchValue }: { searchValue: string }) {
+  const products = await getMockData(searchValue);
 
   return (
     <div className={s.listProducts}>

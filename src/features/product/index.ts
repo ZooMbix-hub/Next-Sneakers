@@ -1,1 +1,1 @@
-export { AddCart, AddDeferred } from './ui';
+export { AddCart, AddDeferred, SearchProduct } from './ui';

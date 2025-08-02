@@ -1,5 +1,5 @@
+import { SearchProduct } from '@/src/features/product';
 import { Typography } from '@/src/shared/ui/Typography';
-import { SearchField } from '@/src/shared/ui/SearchField';
 import s from './MainPage.module.css';
 
 export function Header() {
@@ -8,7 +8,7 @@ export function Header() {
       <Typography variant={'h1'} weight={'bold'}>
         {'Все кроссовки'}
       </Typography>
-      <SearchField />
+      <SearchProduct />
     </div>
   );
 }

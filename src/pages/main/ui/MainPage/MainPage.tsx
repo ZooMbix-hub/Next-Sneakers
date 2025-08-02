@@ -3,12 +3,12 @@ import { ListProducts, Skeleton } from '@/src/widgets/product/ui';
 import { Header } from '../Header/Header';
 import s from './MainPage.module.css';
 
-export function MainPage() {
+export function MainPage({ searchValue }: { searchValue: string }) {
   return (
     <div className={s.mainPage}>
       <Header />
-      <Suspense fallback={<Skeleton />}>
-        <ListProducts />
+      <Suspense key={searchValue} fallback={<Skeleton />}>
+        <ListProducts searchValue={searchValue} />
       </Suspense>
     </div>
   );
