@@ -9,8 +9,13 @@ import s from './AddDeferred.module.css';
 export function AddDeferred() {
   const [isActive, setIsActive] = useState(true);
 
+  const onClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    event.preventDefault();
+    setIsActive((prev) => !prev);
+  };
+
   return (
-    <IconButton className={cn(s.addDeferred, {[s.active]: isActive})}>
+    <IconButton onClick={onClick} className={cn(s.addDeferred, {[s.active]: isActive})}>
       {
         isActive ? <Icon.HeartFill /> : <Icon.Heart />
       }
