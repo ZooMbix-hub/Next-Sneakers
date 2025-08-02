@@ -2,13 +2,14 @@
 
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import { SearchField } from '@/src/shared/ui/SearchField';
+import { debounce } from '@/src/shared/helpers';
 
 export function SearchProduct() {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
 
-  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearch = debounce((event: React.ChangeEvent<HTMLInputElement>) => {
     const params = new URLSearchParams(searchParams || '');
     const searchValue = event.target.value;
 
@@ -19,7 +20,7 @@ export function SearchProduct() {
     }
 
     replace(`${pathname}?${params.toString()}`);
-  };
+  }, 300);
 
   return (
     <SearchField
