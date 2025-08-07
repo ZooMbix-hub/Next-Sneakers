@@ -16,7 +16,7 @@ export default async function Home(props: {
 
   return (
     <MainPage
-      searchValue={searchValue}
+      filter={searchValue}
     />
   );
 }

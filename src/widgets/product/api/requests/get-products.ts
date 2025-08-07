@@ -1,35 +1,32 @@
 import { db } from '@/app/lib/db';
-import MOCK_PRODUCTS from '../../../../../products.json';
+import type { Product } from './types';
 
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-  imageURL: string;
+interface Params {
+  filter?: string;
+  limit?: number;
+  offset?: number;
 }
 
-export async function getProducts(searchValue: string): Promise<Product[]> {
-  const products: Product[] = await new Promise(resolve => setTimeout(() => resolve(MOCK_PRODUCTS), 2000));
-  return products.filter((product) => product.name.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()));
-}
-
-interface Product2 {
-  id: number;
-  name: string;
-  price: number;
-  brand: string;
-  color: string;
-  sizes: string[];
-  gender: 'men' | 'women' | 'unisex' | 'kids';
-  category: 'running' | 'basketball' | 'lifestyle' | 'football' | 'skateboarding' | 'tennis' | 'training' | 'walking';
-  material: 'combination' |  'nubuck' | 'synthetic' | 'suede' |  'rubber';
-  discount: number;
-  image_urls: string[];
-}
-
-export async function getProducts2(params: string): Promise<Product2[]> {
+export async function getProducts({ filter, limit, offset }: Params): Promise<Product[]> {
   try {
-    const { rows } = await db.query<Product2>('SELECT * FROM products');
+    let queryString = 'SELECT * FROM products';
+
+    if (filter) {
+      queryString = `
+        SELECT * FROM products 
+        WHERE LOWER(name) LIKE LOWER('%${filter}%')
+      `;
+    }
+
+    if (limit || offset) {
+      queryString = `
+        SELECT * FROM products 
+        ORDER BY id
+        LIMIT ${limit} OFFSET ${offset}
+      `;
+    }
+
+    const { rows } = await db.query<Product>(queryString);
 
     return rows;
   } catch (error: unknown) {
