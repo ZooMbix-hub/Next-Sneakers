@@ -7,7 +7,7 @@ import { IconButton } from '@/src/shared/ui/IconButton';
 import s from './AddDeferred.module.css';
 
 export function AddDeferred() {
-  const [isActive, setIsActive] = useState(true);
+  const [isActive, setIsActive] = useState(false);
 
   const onClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault();
