@@ -6,7 +6,7 @@ import { Icon } from '@/src/assets';
 import { IconButton } from '@/src/shared/ui/IconButton';
 import s from './AddDeferred.module.css';
 
-export function AddDeferred() {
+export function AddDeferred({ productId }: { productId: number }) {
   const [isActive, setIsActive] = useState(false);
 
   const onClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {

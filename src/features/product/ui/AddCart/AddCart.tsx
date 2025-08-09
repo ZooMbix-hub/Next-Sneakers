@@ -3,7 +3,7 @@
 import { Icon } from '@/src/assets';
 import { IconButton } from '@/src/shared/ui/IconButton';
 
-export function AddCart() {
+export function AddCart({ productId }: { productId: number }) {
   const onClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault();
   };
