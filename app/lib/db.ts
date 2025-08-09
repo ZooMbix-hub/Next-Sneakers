@@ -9,9 +9,9 @@ if (!client.isOpen) {
   client.connect();
 }
 
-export const add = (key: string, value: string) => client.set(key, value);
+export const setToRedis = (key: string, value: string) => client.set(key, value);
 
-export const get = (key: string) => client.get(key);
+export const getFromRedis = (key: string) => client.get(key);
 
 export const db = new Pool({
   user: process.env.DB_USER,
