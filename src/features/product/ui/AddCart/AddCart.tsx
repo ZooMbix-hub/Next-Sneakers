@@ -6,11 +6,10 @@ import { IconButton } from '@/src/shared/ui/IconButton';
 export function AddCart() {
   const onClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault();
-    console.log('first');
   };
 
   return (
-    <IconButton onClick={onClick}>
+    <IconButton onClick={onClick} aria-label={'Добавить в корзину'}>
       <Icon.Plus color={'var(--gray1)'} />
     </IconButton>
   );

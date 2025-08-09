@@ -15,7 +15,11 @@ export function AddDeferred() {
   };
 
   return (
-    <IconButton onClick={onClick} className={cn(s.addDeferred, {[s.active]: isActive})}>
+    <IconButton
+      onClick={onClick}
+      className={cn(s.addDeferred, {[s.active]: isActive})}
+      aria-label={'Добавить в отложенные'}
+    >
       {
         isActive ? <Icon.HeartFill /> : <Icon.Heart />
       }

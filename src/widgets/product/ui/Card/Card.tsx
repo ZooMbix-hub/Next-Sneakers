@@ -14,7 +14,7 @@ export interface CardProps {
 
 export function Card({id, name, price, imageURL}: CardProps) {
   return (
-    <Link href={ROUTES.product(id)} className={s.card}>
+    <Link href={ROUTES.product(id)} className={s.card} aria-label={'Перейти на страницу товара'}>
       <AddDeferred />
       <Image
         src={`/productImages/${imageURL}`}

@@ -15,7 +15,7 @@ export function Header({title}: HeaderProps) {
 
   return (
     <div className={s.header}>
-      <IconButton onClick={() => router.back()}>
+      <IconButton onClick={() => router.back()} aria-label={'Вернуться на страницу товаров'}>
         <Icon.ChevronLeft />
       </IconButton>
       <Typography variant={'h1'} weight={'bold'}>
