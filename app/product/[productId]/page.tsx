@@ -1,5 +1,5 @@
 import { ProductPage } from '@/src/pages/product';
-import type { CardProps } from '@/src/widgets/product/ui/Card/Card';
+import type { Product } from '@/src/widgets/product/api';
 import { getProduct } from '@/src/widgets/product/api';
 
 interface ProductProps {
@@ -11,7 +11,7 @@ interface ProductProps {
 export async function generateMetadata({ params }: ProductProps) {
   const {productId} = await params;
 
-  const product: CardProps = await getProduct(Number(productId));
+  const product: Product = await getProduct(Number(productId));
 
   return {
     title: product.name
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: ProductProps) {
 export default async function Product({ params }: ProductProps) {
   const {productId} = await params;
 
-  const product: CardProps = await getProduct(Number(productId));
+  const product: Product = await getProduct(Number(productId));
 
   return <ProductPage product={product} />;
 }
