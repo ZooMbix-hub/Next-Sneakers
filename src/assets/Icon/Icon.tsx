@@ -1,4 +1,5 @@
 import { ArrowRight } from './icons/ArrowRight';
+import { ArrowLeft } from './icons/ArrowLeft';
 import { Basket } from './icons/Basket';
 import { Check } from './icons/Check';
 import { ChevronLeft } from './icons/ChevronLeft';
@@ -17,6 +18,7 @@ export const Icon = {
   HeartFill,
   Check,
   ArrowRight,
+  ArrowLeft,
   ChevronLeft
 };
 

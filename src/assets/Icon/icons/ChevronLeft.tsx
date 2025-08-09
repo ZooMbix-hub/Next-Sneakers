@@ -1,7 +1,7 @@
 import type { IconProps } from '../Icon';
 
 export const ChevronLeft = (props: IconProps) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" color="#9B9B9B" viewBox="0 0 16 16" {...props}>
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" color="#BDBDBD" viewBox="0 0 16 16" {...props}>
     <path fill="currentColor" fillRule="evenodd" d="M10.53 2.97a.75.75 0 0 1 0 1.06L6.56 8l3.97 3.97a.75.75 0 1 1-1.06 1.06l-4.5-4.5a.75.75 0 0 1 0-1.06l4.5-4.5a.75.75 0 0 1 1.06 0" clipRule="evenodd"/>
   </svg>
 );
