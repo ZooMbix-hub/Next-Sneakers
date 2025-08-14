@@ -1,14 +1,14 @@
 import { Suspense } from 'react';
-import { ListProducts, Skeleton } from '@/src/widgets/product/ui';
+import { ListProducts, ListProductsSkeleton } from '@/src/widgets/product/ui';
 import { Header } from '../Header/Header';
 import s from './MainPage.module.css';
 import { Pagination } from '@/src/shared/ui/Pagination';
 
-export function MainPage({ filter }: { filter: string }) {
+export function MainPage({ filter, page }: { filter: string, page: string }) {
   return (
     <div className={s.mainPage}>
       <Header />
-      <Suspense key={filter} fallback={<Skeleton />}>
+      <Suspense key={filter + page} fallback={<ListProductsSkeleton />}>
         <ListProducts filter={filter} />
       </Suspense>
       <Pagination />

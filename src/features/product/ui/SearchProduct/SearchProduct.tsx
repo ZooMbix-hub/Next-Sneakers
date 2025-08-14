@@ -14,9 +14,9 @@ export function SearchProduct() {
     const searchValue = event.target.value;
 
     if (searchValue) {
-      params.set('search', searchValue);
+      params.set('filter', searchValue);
     } else {
-      params.delete('search');
+      params.delete('filter');
     }
 
     replace(`${pathname}?${params.toString()}`);
@@ -25,7 +25,7 @@ export function SearchProduct() {
   return (
     <SearchField
       onChange={handleSearch}
-      defaultValue={searchParams?.get('search')?.toString()}
+      defaultValue={searchParams?.get('filter')?.toString()}
     />
   );
 }

@@ -8,15 +8,18 @@ export const metadata: Metadata = {
 
 export default async function Home(props: {
   searchParams?: Promise<{
-    search?: string;
+    filter?: string;
+    page?: string;
   }>;
 }) {
   const searchParams = await props.searchParams;
-  const searchValue = searchParams?.search || '';
+  const filter = searchParams?.filter || '';
+  const page = searchParams?.page || '';
 
   return (
     <MainPage
-      filter={searchValue}
+      filter={filter}
+      page={page}
     />
   );
 }

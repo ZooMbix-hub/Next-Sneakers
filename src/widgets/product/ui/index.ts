@@ -1,2 +1,2 @@
 export { ListProducts } from './ListProducts/ListProducts';
-export { Skeleton } from './Sceleton/Skeleton';
+export { ListProductsSkeleton } from './ListProductsSceleton/ListProductsSkeleton';

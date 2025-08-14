@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import s from './Skeleton.module.css';
+import s from './ListProductsSkeleton.module.css';
 
 const SkeletonProductCard = () => (
   <div className={s.skeleton}>
@@ -13,9 +13,9 @@ const SkeletonProductCard = () => (
       <div className={s.shimmer} />
     </div>
   </div>
-)
+);
 
-export function Skeleton() {
+export function ListProductsSkeleton() {
   return (
     <div className={s.listSkeletons}>
       {
