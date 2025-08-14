@@ -4,12 +4,12 @@ import { Header } from '../Header/Header';
 import s from './MainPage.module.css';
 import { Pagination } from '@/src/shared/ui/Pagination';
 
-export function MainPage({ filter, page }: { filter: string, page: string }) {
+export function MainPage({ filter, page }: { filter: string, page: number }) {
   return (
     <div className={s.mainPage}>
       <Header />
       <Suspense key={filter + page} fallback={<ListProductsSkeleton />}>
-        <ListProducts filter={filter} />
+        <ListProducts filter={filter} page={page} />
       </Suspense>
       <Pagination />
     </div>

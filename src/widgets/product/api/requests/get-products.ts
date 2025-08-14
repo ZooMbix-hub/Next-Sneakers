@@ -3,11 +3,12 @@ import type { Product } from './types';
 
 interface Params {
   filter?: string;
-  limit?: number;
-  offset?: number;
+  page: number;
 }
 
-export async function getProducts({ filter, limit, offset }: Params): Promise<Product[]> {
+const ITEMS_PER_PAGE = 10;
+
+export async function getProducts({ filter, page }: Params): Promise<Product[]> {
   try {
     let queryString = 'SELECT * FROM products';
 
@@ -18,11 +19,12 @@ export async function getProducts({ filter, limit, offset }: Params): Promise<Pr
       `;
     }
 
-    if (limit || offset) {
+    if (page !== 1) {
+      const offset = (page - 1) * ITEMS_PER_PAGE;
       queryString = `
-        SELECT * FROM products 
+        SELECT * FROM products
         ORDER BY id
-        LIMIT ${limit} OFFSET ${offset}
+        LIMIT ${page} OFFSET ${offset}
       `;
     }
 

@@ -9,12 +9,12 @@ export const metadata: Metadata = {
 export default async function Home(props: {
   searchParams?: Promise<{
     filter?: string;
-    page?: string;
+    page?: number;
   }>;
 }) {
   const searchParams = await props.searchParams;
   const filter = searchParams?.filter || '';
-  const page = searchParams?.page || '';
+  const page = searchParams?.page || 1;
 
   return (
     <MainPage
