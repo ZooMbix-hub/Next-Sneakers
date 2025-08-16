@@ -10,20 +10,17 @@ const ITEMS_PER_PAGE = 10;
 
 export async function getProducts({ filter, page }: Params): Promise<Product[]> {
   try {
-    let queryString = 'SELECT * FROM products';
+    const offset = page > 1 ? (page - 1) * ITEMS_PER_PAGE : 0;
+
+    let queryString = `
+      SELECT * FROM products
+      LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
+    `;
 
     if (filter) {
       queryString = `
         SELECT * FROM products 
         WHERE LOWER(name) LIKE LOWER('%${filter}%')
-      `;
-    }
-
-    if (page !== 1) {
-      const offset = (page - 1) * ITEMS_PER_PAGE;
-      queryString = `
-        SELECT * FROM products
-        ORDER BY id
         LIMIT ${page} OFFSET ${offset}
       `;
     }

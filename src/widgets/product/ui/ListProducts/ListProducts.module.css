@@ -1,6 +1,17 @@
 .listProducts {
   display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.cardContainer {
+  display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 40px;
+}
+
+.pagginationWrapper {
+  display: flex;
+  justify-content: center;
 }
