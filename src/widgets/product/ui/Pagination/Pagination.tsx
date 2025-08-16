@@ -5,19 +5,22 @@ import { Icon } from '@/src/assets';
 import { PaginationButton } from './PaginationButton';
 import s from './Pagination.module.css';
 
-const ITEMS_PER_PAGE = 10;
-
-export function Pagination({ countProducts }: { countProducts: number }) {
+export function Pagination({ totalPage }: { totalPage: number }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   const currentPage = Number(searchParams?.get('page')) || 1;
-  const totalPage = Math.ceil(countProducts / ITEMS_PER_PAGE);
 
   const createPageURL = (pageNumber: number | string) => {
     const params = new URLSearchParams(searchParams || '');
     params.set('page', pageNumber.toString());
     return `${pathname}?${params.toString()}`;
+  };
+
+  const getPages = () => {
+    console.log(currentPage, totalPage);
+
+    return Array.from({length: totalPage}, (_, i) => ++i);
   };
 
   return (
@@ -28,8 +31,18 @@ export function Pagination({ countProducts }: { countProducts: number }) {
       >
         <Icon.ArrowLeft />
       </PaginationButton>
-      <div>
-
+      <div className={s.paginationsPages}>
+        {
+          getPages().map((item, i) => (
+            <PaginationButton
+              key={i}
+              href={createPageURL(item)}
+              isActive={currentPage === item}
+            >
+              {item}
+            </PaginationButton>
+          ))
+        }
       </div>
       <PaginationButton
         href={createPageURL(currentPage + 1)}

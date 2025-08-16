@@ -3,9 +3,12 @@ import { Card } from '../Card/Card';
 import { Pagination } from '../Pagination';
 import s from './ListProducts.module.css';
 
+const ITEMS_PER_PAGE = 10;
+
 export async function ListProducts({ filter, page }: { filter: string, page: number }) {
   const products = await getProducts({ filter, page });
   const countProducts = await getCountProducts({ filter });
+  const totalPage = Math.ceil(countProducts / ITEMS_PER_PAGE);
 
   return (
     <div className={s.listProducts}>
@@ -23,7 +26,7 @@ export async function ListProducts({ filter, page }: { filter: string, page: num
         }
       </div>
       <div className={s.pagginationWrapper}>
-        <Pagination countProducts={countProducts}/>
+        <Pagination totalPage={totalPage}/>
       </div>
     </div>
   );

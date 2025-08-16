@@ -5,15 +5,28 @@ import s from './Pagination.module.css';
 interface PaginationButtonProps {
   children: string | React.ReactNode;
   href: string;
-  isDisabled: boolean;
+  isDisabled?: boolean;
+  isActive?: boolean;
 }
 
-export function PaginationButton({ children, href, isDisabled }: PaginationButtonProps) {
-  return isDisabled ? (
-    <div className={cn(s.paginationButton, s.disabled)}>
-      {children}
-    </div>
-  ) : (
+export function PaginationButton({ children, href, isDisabled, isActive }: PaginationButtonProps) {
+  if (isActive) {
+    return (
+      <div className={cn(s.paginationButton, s.active)}>
+        {children}
+      </div>
+    );
+  }
+
+  if (isDisabled) {
+    return (
+      <div className={cn(s.paginationButton, s.disabled)}>
+        {children}
+      </div>
+    );
+  }
+
+  return (
     <Link
       href={href}
       className={s.paginationButton}

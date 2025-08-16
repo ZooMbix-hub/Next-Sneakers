@@ -1,6 +1,11 @@
 .pagination {
   display: flex;
-  gap: 8px;
+  gap: 12px;
+}
+
+.paginationsPages {
+  display: flex;
+  gap: 6px;
 }
 
 .paginationButton {
@@ -25,4 +30,9 @@
 
 .paginationButton:hover svg, .disabled svg {
   color: var(--gray1);
+}
+
+.active, .active:hover {
+  border: 1px solid var(--blue);
+  color: var(--blue);
 }
