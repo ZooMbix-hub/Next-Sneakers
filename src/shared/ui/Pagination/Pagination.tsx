@@ -2,13 +2,17 @@
 
 import { usePathname, useSearchParams } from 'next/navigation';
 import { Icon } from '@/src/assets';
+import { PaginationButton } from './PaginationButton';
 import s from './Pagination.module.css';
-import Link from 'next/link';
 
-export function Pagination({ totalPages }: { totalPages: number }) {
+const ITEMS_PER_PAGE = 10;
+
+export function Pagination({ countProducts }: { countProducts: number }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
+
   const currentPage = Number(searchParams?.get('page')) || 1;
+  const totalPage = Math.ceil(countProducts / ITEMS_PER_PAGE);
 
   const createPageURL = (pageNumber: number | string) => {
     const params = new URLSearchParams(searchParams || '');
@@ -18,15 +22,21 @@ export function Pagination({ totalPages }: { totalPages: number }) {
 
   return (
     <div className={s.pagination}>
-      <Link href={createPageURL(currentPage - 1)}>
+      <PaginationButton
+        href={createPageURL(currentPage - 1)}
+        isDisabled={currentPage === 1}
+      >
         <Icon.ArrowLeft />
-      </Link>
+      </PaginationButton>
       <div>
 
       </div>
-      <Link href={createPageURL(currentPage + 1)}>
+      <PaginationButton
+        href={createPageURL(currentPage + 1)}
+        isDisabled={currentPage === totalPage}
+      >
         <Icon.ArrowRight />
-      </Link>
+      </PaginationButton>
     </div>
   );
 }

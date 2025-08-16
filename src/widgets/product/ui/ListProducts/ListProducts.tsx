@@ -5,7 +5,7 @@ import s from './ListProducts.module.css';
 
 export async function ListProducts({ filter, page }: { filter: string, page: number }) {
   const products = await getProducts({ filter, page });
-  const count = await getCountProducts({ filter });
+  const countProducts = await getCountProducts({ filter });
 
   return (
     <div className={s.listProducts}>
@@ -23,7 +23,7 @@ export async function ListProducts({ filter, page }: { filter: string, page: num
         }
       </div>
       <div className={s.pagginationWrapper}>
-        <Pagination totalPages={count}/>
+        <Pagination countProducts={countProducts}/>
       </div>
     </div>
   );
