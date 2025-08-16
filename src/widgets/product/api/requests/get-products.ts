@@ -2,7 +2,7 @@ import { db } from '@/app/lib/db';
 import type { Product } from './types';
 
 interface Params {
-  filter?: string;
+  filter: string;
   page: number;
 }
 
@@ -21,7 +21,7 @@ export async function getProducts({ filter, page }: Params): Promise<Product[]> 
       queryString = `
         SELECT * FROM products 
         WHERE LOWER(name) LIKE LOWER('%${filter}%')
-        LIMIT ${page} OFFSET ${offset}
+        LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
       `;
     }
 
