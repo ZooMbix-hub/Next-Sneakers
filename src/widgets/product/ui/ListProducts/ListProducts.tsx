@@ -1,6 +1,6 @@
-import { Pagination } from '@/src/shared/ui/Pagination';
 import { getCountProducts, getProducts } from '../../api';
 import { Card } from '../Card/Card';
+import { Pagination } from '../Pagination';
 import s from './ListProducts.module.css';
 
 export async function ListProducts({ filter, page }: { filter: string, page: number }) {
