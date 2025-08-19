@@ -17,9 +17,8 @@ export function Pagination({ totalPage }: { totalPage: number }) {
     return `${pathname}?${params.toString()}`;
   };
 
+  /* TODO: реализовать отображение номеров страниц */
   const getPages = () => {
-    console.log(currentPage, totalPage);
-
     return Array.from({length: totalPage}, (_, i) => ++i);
   };
 
