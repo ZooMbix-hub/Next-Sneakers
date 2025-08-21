@@ -9,6 +9,8 @@ import { Plus } from './icons/Plus';
 import { Profile } from './icons/Profile';
 import { Search } from './icons/Search';
 import { Close } from './icons/Close';
+import { Key } from './icons/Key';
+import { Mail } from './icons/Mail';
 
 export const Icon = {
   Basket,
@@ -21,7 +23,9 @@ export const Icon = {
   ArrowRight,
   ArrowLeft,
   ChevronLeft,
-  Close
+  Close,
+  Key,
+  Mail
 };
 
 export type IconType = keyof typeof Icon;

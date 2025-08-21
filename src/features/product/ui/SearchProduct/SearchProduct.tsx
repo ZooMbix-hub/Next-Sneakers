@@ -29,6 +29,7 @@ export function SearchProduct() {
       defaultValue={searchParams?.get('filter')?.toString()}
       icon={<Icon.Search />}
       placeholder={'Поиск'}
+      isFullWidth={false}
     />
   );
 }
