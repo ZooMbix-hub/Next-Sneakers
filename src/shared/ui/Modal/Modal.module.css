@@ -1,0 +1,28 @@
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+  
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contentModal {
+  width: 500px;
+  background-color: var(--white);
+  border-radius: 15px;
+  padding: 25px;
+}
+
+.iconButtonWrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+}

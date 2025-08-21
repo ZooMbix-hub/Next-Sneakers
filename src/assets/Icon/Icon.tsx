@@ -8,6 +8,7 @@ import { HeartFill } from './icons/HeartFill';
 import { Plus } from './icons/Plus';
 import { Profile } from './icons/Profile';
 import { Search } from './icons/Search';
+import { Close } from './icons/Close';
 
 export const Icon = {
   Basket,
@@ -19,7 +20,8 @@ export const Icon = {
   Check,
   ArrowRight,
   ArrowLeft,
-  ChevronLeft
+  ChevronLeft,
+  Close
 };
 
 export type IconType = keyof typeof Icon;

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { Modal } from '@/src/shared/ui/Modal/Modal';
 import { AuthorizationForm } from './AuthorizationForm';
 
 export function Authorization() {
@@ -12,7 +13,14 @@ export function Authorization() {
   return (
     <>
       <button onClick={openModal}>Войти</button>
-      {isOpenModal && <AuthorizationForm />}
+      {
+        isOpenModal && (
+          <Modal
+            onClose={closeModal}
+            content={<AuthorizationForm />}
+          />
+        )
+      }
     </>
   );
 }
