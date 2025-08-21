@@ -1,21 +1,24 @@
 'use client';
 
-import { useRef } from 'react';
-import { Icon } from '@/src/assets';
-import s from './SearchField.module.css';
+import React, { useRef } from 'react';
+import s from './TextField.module.css';
 
-export function SearchField({ onChange, defaultValue }: React.InputHTMLAttributes<HTMLInputElement>) {
+interface TextFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  icon?: React.ReactNode;
+}
+
+export function TextField({ onChange, defaultValue, icon, placeholder }: TextFieldProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
   return (
     <div className={s.searchField} onClick={() => inputRef.current?.focus()}>
-      <Icon.Search />
+      {icon}
       <input
         onChange={onChange}
         defaultValue={defaultValue}
         className={s.field}
         type={'text'}
-        placeholder={'Поиск'}
+        placeholder={placeholder}
         ref={inputRef}
       />
     </div>

@@ -1,8 +1,9 @@
 'use client';
 
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
-import { SearchField } from '@/src/shared/ui/SearchField';
+import { TextField } from '@/src/shared/ui/TextField';
 import { debounce } from '@/src/shared/helpers';
+import { Icon } from '@/src/assets';
 
 export function SearchProduct() {
   const searchParams = useSearchParams();
@@ -23,9 +24,11 @@ export function SearchProduct() {
   }, 300);
 
   return (
-    <SearchField
+    <TextField
       onChange={handleSearch}
       defaultValue={searchParams?.get('filter')?.toString()}
+      icon={<Icon.Search />}
+      placeholder={'Поиск'}
     />
   );
 }
