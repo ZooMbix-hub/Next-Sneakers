@@ -16,6 +16,7 @@ export function Authorization() {
       {
         isOpenModal && (
           <Modal
+            isOpen={isOpenModal}
             onClose={closeModal}
             content={<AuthorizationForm />}
           />
