@@ -15,7 +15,10 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "redis": "5.8.0",
-    "typescript": "5"
+    "typescript": "5",
+    "bcryptjs": "3.0.2",
+    "next-auth": "5.0.0-beta.29",
+    "zod": "4.0.17"
   },
   "devDependencies": {
     "@eslint/eslintrc": "3",
