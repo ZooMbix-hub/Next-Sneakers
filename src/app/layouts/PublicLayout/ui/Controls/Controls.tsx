@@ -2,6 +2,7 @@
 
 import { useSession } from 'next-auth/react';
 import { Navigation } from '../Navigation';
+import { Authorization } from '@/src/features/auth';
 
 export function Controls() {
   const {status} = useSession();
@@ -10,5 +11,5 @@ export function Controls() {
 
   console.log(status, isAuth);
 
-  return isAuth ? <Navigation /> : 11;
+  return isAuth ? <Navigation /> : <Authorization />;
 }
