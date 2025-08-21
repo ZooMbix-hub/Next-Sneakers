@@ -9,7 +9,6 @@ import { Typography } from '@/src/shared/ui/Typography';
 import s from './Navigation.module.css';
 import { useActionState } from 'react';
 import { authenticate, signOutFunc } from '@/app/lib/actions';
-import { useSession } from 'next-auth/react';
 
 export function Navigation() {
   const pathname = usePathname();
@@ -17,9 +16,6 @@ export function Navigation() {
     authenticate,
     undefined,
   );
-  const {data, status, update} = useSession();
-
-  console.log(data, status, update);
 
   return (
     <nav>
