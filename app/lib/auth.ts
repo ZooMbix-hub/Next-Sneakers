@@ -55,8 +55,6 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
 
             return user;
           }
-
-          console.log('Invalid credentials');
         } catch (error) {
           if (error instanceof ZodError) return null;
 
