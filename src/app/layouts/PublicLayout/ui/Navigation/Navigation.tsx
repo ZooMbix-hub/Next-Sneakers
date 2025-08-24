@@ -8,8 +8,8 @@ import { ROUTES } from '@/src/shared/routes';
 import { Typography } from '@/src/shared/ui/Typography';
 import s from './Navigation.module.css';
 import { useActionState } from 'react';
-import { signOutFunc } from '@/app/lib/actions';
 import { signInFunc } from '@/src/features/auth/actions';
+import { signOutFunc } from '@/src/features/auth/actions/signOutFunc';
 
 export function Navigation() {
   const pathname = usePathname();
