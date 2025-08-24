@@ -20,6 +20,10 @@ export function SearchProduct() {
       params.delete('filter');
     }
 
+    if (params.get('page')) {
+      params.delete('page');
+    }
+
     replace(`${pathname}?${params.toString()}`);
   }, 300);
 
