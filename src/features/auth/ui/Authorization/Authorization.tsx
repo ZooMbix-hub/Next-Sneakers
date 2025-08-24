@@ -19,6 +19,7 @@ export function Authorization() {
             isOpen={isOpenModal}
             onClose={closeModal}
             content={<AuthorizationForm />}
+            title={'Авторизация'}
           />
         )
       }

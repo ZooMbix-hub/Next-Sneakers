@@ -8,12 +8,13 @@ import { ROUTES } from '@/src/shared/routes';
 import { Typography } from '@/src/shared/ui/Typography';
 import s from './Navigation.module.css';
 import { useActionState } from 'react';
-import { authenticate, signOutFunc } from '@/app/lib/actions';
+import { signOutFunc } from '@/app/lib/actions';
+import { signInFunc } from '@/src/features/auth/actions';
 
 export function Navigation() {
   const pathname = usePathname();
   const [errorMessage, formAction, isPending] = useActionState(
-    authenticate,
+    signInFunc,
     undefined,
   );
 

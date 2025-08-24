@@ -2,6 +2,7 @@
 
 import { Icon } from '@/src/assets';
 import { IconButton } from '../IconButton';
+import { Typography } from '../Typography';
 import { useScrollLock } from './useScrollLock';
 import s from './Modal.module.css';
 
@@ -9,13 +10,15 @@ interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   content: React.ReactNode;
+  title: string;
 }
 
 export function Modal(props: ModalProps) {
   const {
     isOpen,
     onClose,
-    content
+    content,
+    title
   } = props;
 
   useScrollLock(isOpen);
@@ -27,6 +30,11 @@ export function Modal(props: ModalProps) {
           <IconButton onClick={onClose}>
             <Icon.Close />
           </IconButton>
+        </div>
+        <div className={s.typographyWrapper}>
+          <Typography variant={'h3'} weight={'medium'}>
+            {title}
+          </Typography>
         </div>
         {content}
       </div>

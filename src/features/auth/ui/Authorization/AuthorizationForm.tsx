@@ -4,11 +4,12 @@ import { useActionState } from 'react';
 import { Typography } from '@/src/shared/ui/Typography';
 import { TextField } from '@/src/shared/ui/TextField';
 import { Icon } from '@/src/assets';
+import { signInFunc } from '../../actions';
 import s from './Authorization.module.css';
 
 export function AuthorizationForm() {
   const [errorMessage, formAction, isPending] = useActionState(
-    (arg1, arg2) => console.log(arg1, arg2),
+    signInFunc,
     undefined,
   );
 
