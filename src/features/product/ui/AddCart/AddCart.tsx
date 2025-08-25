@@ -2,10 +2,12 @@
 
 import { Icon } from '@/src/assets';
 import { IconButton } from '@/src/shared/ui/IconButton';
+import { addToCart } from '../../api';
 
 export function AddCart({ productId }: { productId: number }) {
-  const onClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const onClick = async (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault();
+    await addToCart(productId);
   };
 
   return (

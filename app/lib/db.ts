@@ -1,7 +1,7 @@
 import { Pool } from 'pg';
 import { createClient } from 'redis';
 
-const client = createClient({
+export const clientRedis = createClient({
   socket: {
     reconnectStrategy: (retries) => {
       if (retries < 10) {
@@ -14,24 +14,13 @@ const client = createClient({
 });
 
 // eslint-disable-next-line no-console
-client.on('error', (err) => console.log('Redis Client Error:', err));
+clientRedis.on('error', (err) => console.log('Redis Client Error:', err));
 
-async function initializeRedis() {
-  if (!client.isOpen) {
-    await client.connect();
+(async function initializeRedis() {
+  if (!clientRedis.isOpen) {
+    await clientRedis.connect();
   }
-}
-
-initializeRedis();
-
-export const setToRedis = async (key: string, value: any) => {
-  await client.set(key, JSON.stringify(value));
-};
-
-export const getFromRedis =  async (key: string) => {
-  const value = await client.get(key);
-  return value;
-};
+})();
 
 export const db = new Pool({
   user: process.env.DB_USER,
