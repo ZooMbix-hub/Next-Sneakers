@@ -1,0 +1,15 @@
+.active {
+  background-color: var(--green1);
+}
+
+.active svg, .active:hover svg {
+  color: var(--white);
+}
+
+.active:hover {
+  border: none;
+}
+
+.active:hover {
+  background-color: var(--green2);
+}
