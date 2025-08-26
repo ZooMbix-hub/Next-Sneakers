@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useRef } from 'react';
-import s from './TextField.module.css';
 import cn from 'classnames';
+import s from './TextField.module.css';
 
 interface TextFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
   icon?: React.ReactNode;
@@ -17,6 +17,7 @@ export function TextField(props: TextFieldProps) {
     required = false,
     defaultValue,
     placeholder,
+    inputMode,
     icon,
     isFullWidth = true
   } = props;
@@ -37,6 +38,7 @@ export function TextField(props: TextFieldProps) {
         required={required}
         defaultValue={defaultValue}
         placeholder={placeholder}
+        inputMode={inputMode}
         className={s.field}
         ref={inputRef}
       />

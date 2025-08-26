@@ -34,6 +34,7 @@ export function SearchProduct() {
       icon={<Icon.Search />}
       placeholder={'Поиск'}
       isFullWidth={false}
+      inputMode={'search'}
     />
   );
 }

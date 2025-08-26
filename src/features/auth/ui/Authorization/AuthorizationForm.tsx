@@ -21,6 +21,7 @@ export function AuthorizationForm() {
         </Typography>
         <TextField
           name={'email'}
+          inputMode={'email'}
           icon={<Icon.Mail />}
           required={true}
           placeholder={'Введите email'}
