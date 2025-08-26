@@ -30,6 +30,8 @@ export async function ListProducts({ filter, page }: { filter: string, page: num
               name={name}
               price={price}
               imageURL={image_urls[0]}
+              inDeffered={defferedProducts.has(String(id))}
+              inCart={cartProducts.has(String(id))}
             />
           ))
         }

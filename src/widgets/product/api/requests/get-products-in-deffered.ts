@@ -8,18 +8,16 @@ export async function getProductsInDeffered() {
     const session = await auth();
 
     if (!session?.user?.id) {
-      return [];
+      return new Set([]);
     };
 
     const userId = session.user.id;
 
-    console.log(`deffer:${userId}`)
-
     const defferedProducts = await clientRedis.SMEMBERS(`deffered:${userId}`);
 
-    return defferedProducts;
+    return new Set(defferedProducts);
   } catch (error: unknown) {
     console.error('Error executing query to Redis:', error);
-    return [];
+    return new Set([]);
   }
 }

@@ -8,16 +8,16 @@ export async function getProductsInCart() {
     const session = await auth();
 
     if (!session?.user?.id) {
-      return [];
+      return new Set([]);
     };
 
     const userId = session.user.id;
 
     const cartProducts = await clientRedis.SMEMBERS(`cart:${userId}`);
 
-    return cartProducts;
+    return new Set(cartProducts);
   } catch (error: unknown) {
     console.error('Error executing query to Redis:', error);
-    return [];
+    return new Set([]);
   }
 }

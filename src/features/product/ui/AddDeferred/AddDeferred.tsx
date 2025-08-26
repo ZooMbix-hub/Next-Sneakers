@@ -7,8 +7,8 @@ import { IconButton } from '@/src/shared/ui/IconButton';
 import { addToDeffered, deleteFromDeffered } from '../../api';
 import s from './AddDeferred.module.css';
 
-export function AddDeferred({ productId }: { productId: number }) {
-  const [isActive, setIsActive] = useState(false);
+export function AddDeferred({ productId, isActive: isActiveProps }: { productId: number, isActive: boolean }) {
+  const [isActive, setIsActive] = useState(isActiveProps);
 
   const onClick = async (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault();

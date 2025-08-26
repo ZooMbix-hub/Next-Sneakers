@@ -10,12 +10,14 @@ export interface CardProps {
   name: string;
   price: number;
   imageURL: string;
+  inDeffered: boolean;
+  inCart: boolean;
 }
 
-export function Card({id, name, price, imageURL}: CardProps) {
+export function Card({id, name, price, imageURL, inDeffered, inCart}: CardProps) {
   return (
     <Link href={ROUTES.product(id)} className={s.card} aria-label={'Перейти на страницу товара'}>
-      <AddDeferred productId={id} />
+      <AddDeferred productId={id} isActive={inDeffered} />
       <Image
         src={`/productImages/${imageURL}`}
         alt={'product image'}
@@ -35,7 +37,7 @@ export function Card({id, name, price, imageURL}: CardProps) {
             {`${price} руб.`}
           </Typography>
         </div>
-        <AddCart productId={id} />
+        <AddCart productId={id} isActive={inCart} />
       </div>
     </Link>
   );
