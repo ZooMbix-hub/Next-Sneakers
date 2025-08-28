@@ -6,16 +6,16 @@ import { TextField } from '@/src/shared/ui/TextField';
 import { Button } from '@/src/shared/ui/Button';
 import { Icon } from '@/src/assets';
 import { signInFunc } from '../../actions';
-import s from './Authorization.module.css';
+import s from './Registration.module.css';
 
-export function AuthorizationForm() {
+export function RegistrationForm() {
   const [errorMessage, formAction, isPending] = useActionState(
     signInFunc,
     undefined,
   );
 
   return (
-    <form className={s.authForm} action={formAction}>
+    <form className={s.registrForm} action={formAction}>
       <div className={s.field}>
         <Typography variant={'caption'}>
           {'Email'}
@@ -27,8 +27,6 @@ export function AuthorizationForm() {
           required={true}
           placeholder={'Введите email'}
         />
-      </div>
-      <div className={s.field}>
         <Typography variant={'caption'}>
           {'Пароль'}
         </Typography>
@@ -39,9 +37,19 @@ export function AuthorizationForm() {
           required={true}
           placeholder={'Введите пароль'}
         />
+        <Typography variant={'caption'}>
+          {'Повторный пароль'}
+        </Typography>
+        <TextField
+          name={'password'}
+          type={'password'}
+          icon={<Icon.Key />}
+          required={true}
+          placeholder={'Введите пароль повторно'}
+        />
       </div>
       <Button>
-        {'Войти'}
+        {'Зарегистрироваться'}
       </Button>
     </form>
   );
