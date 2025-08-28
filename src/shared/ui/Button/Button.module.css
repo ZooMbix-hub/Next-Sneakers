@@ -1,0 +1,12 @@
+.button {
+  display: flex;
+  gap: 8px;
+
+  border-radius: 18px;
+  background-color: var(--green1);
+  padding: 12px;
+}
+
+.button:hover {
+  background-color: var(--green2);
+}

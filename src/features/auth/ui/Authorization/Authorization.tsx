@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Modal } from '@/src/shared/ui/Modal/Modal';
+import { Button } from '@/src/shared/ui/Button';
 import { AuthorizationForm } from './AuthorizationForm';
 
 export function Authorization() {
@@ -12,7 +13,7 @@ export function Authorization() {
 
   return (
     <>
-      <button onClick={openModal}>Войти</button>
+      <Button onClick={openModal}>Войти</Button>
       {
         isOpenModal && (
           <Modal
