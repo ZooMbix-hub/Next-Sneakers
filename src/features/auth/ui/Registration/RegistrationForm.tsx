@@ -5,12 +5,12 @@ import { Typography } from '@/src/shared/ui/Typography';
 import { TextField } from '@/src/shared/ui/TextField';
 import { Button } from '@/src/shared/ui/Button';
 import { Icon } from '@/src/assets';
-import { signInFunc } from '../../actions';
+import { registerFunc } from '../../actions';
 import s from './Registration.module.css';
 
 export function RegistrationForm() {
   const [errorMessage, formAction, isPending] = useActionState(
-    signInFunc,
+    registerFunc,
     undefined,
   );
 
@@ -41,7 +41,7 @@ export function RegistrationForm() {
           {'Повторный пароль'}
         </Typography>
         <TextField
-          name={'password'}
+          name={'repeatPassword'}
           type={'password'}
           icon={<Icon.Key />}
           required={true}
