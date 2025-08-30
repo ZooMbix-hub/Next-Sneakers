@@ -58,6 +58,10 @@
   color: var(--white);
 }
 
+.danger1 {
+  color: var(--danger1);
+}
+
 .regular {
   font-weight: 400;
 }

@@ -17,7 +17,7 @@ export function RegistrationForm() {
   return (
     <form className={s.registrForm} action={formAction}>
       <div className={s.field}>
-        <Typography variant={'caption'}>
+        <Typography variant={'caption'} weight={'medium'}>
           {'Email'}
         </Typography>
         <TextField
@@ -26,8 +26,22 @@ export function RegistrationForm() {
           icon={<Icon.Mail />}
           required={true}
           placeholder={'Введите email'}
+          isDanger={Boolean(errorMessage?.errors?.email)}
         />
-        <Typography variant={'caption'}>
+        {errorMessage?.errors?.email && (
+          <div>
+            {
+              errorMessage?.errors?.email.map((message, idx) => (
+                <Typography key={idx} variant={'caption'} color={'danger1'}>
+                  {message}
+                </Typography>
+              ))
+            }
+          </div>
+        )}
+      </div>
+      <div className={s.field}>
+        <Typography variant={'caption'} weight={'medium'}>
           {'Пароль'}
         </Typography>
         <TextField
@@ -36,8 +50,22 @@ export function RegistrationForm() {
           icon={<Icon.Key />}
           required={true}
           placeholder={'Введите пароль'}
+          isDanger={Boolean(errorMessage?.errors?.password)}
         />
-        <Typography variant={'caption'}>
+        {errorMessage?.errors?.password && (
+          <div>
+            {
+              errorMessage?.errors?.password.map((message, idx) => (
+                <Typography key={idx} variant={'caption'} color={'danger1'}>
+                  {message}
+                </Typography>
+              ))
+            }
+          </div>
+        )}
+      </div>
+      <div className={s.field}>
+        <Typography variant={'caption'} weight={'medium'}>
           {'Повторный пароль'}
         </Typography>
         <TextField
@@ -46,7 +74,19 @@ export function RegistrationForm() {
           icon={<Icon.Key />}
           required={true}
           placeholder={'Введите пароль повторно'}
+          isDanger={Boolean(errorMessage?.errors?.repeatPassword)}
         />
+        {errorMessage?.errors?.repeatPassword && (
+          <div>
+            {
+              errorMessage?.errors?.repeatPassword.map((message, idx) => (
+                <Typography key={idx} variant={'caption'} color={'danger1'}>
+                  {message}
+                </Typography>
+              ))
+            }
+          </div>
+        )}
       </div>
       <Button disabled={isPending}>
         {'Зарегистрироваться'}

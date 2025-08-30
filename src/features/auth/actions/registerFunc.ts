@@ -17,7 +17,10 @@ interface RegisterResult {
   };
 }
 
-export async function registerFunc(prevState: string | undefined, formData: FormData): Promise<RegisterResult> {
+export async function registerFunc(
+  prevState: RegisterResult | undefined,
+  formData: FormData
+): Promise<RegisterResult> {
   try {
     const email = formData.get('email');
     const password = formData.get('password');

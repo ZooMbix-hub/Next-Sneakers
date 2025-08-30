@@ -7,6 +7,7 @@ import s from './TextField.module.css';
 interface TextFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
   icon?: React.ReactNode;
   isFullWidth?: boolean;
+  isDanger?: boolean;
 }
 
 export function TextField(props: TextFieldProps) {
@@ -19,14 +20,18 @@ export function TextField(props: TextFieldProps) {
     placeholder,
     inputMode,
     icon,
-    isFullWidth = true
+    isFullWidth = true,
+    isDanger
   } = props;
 
   const inputRef = useRef<HTMLInputElement>(null);
 
   return (
     <div
-      className={cn(s.searchField, {[s.fullWidth]: isFullWidth})}
+      className={cn(s.searchField, {
+        [s.fullWidth]: isFullWidth,
+        [s.danger]: isDanger
+      })}
       onClick={() => inputRef.current?.focus()}
     >
       {icon}

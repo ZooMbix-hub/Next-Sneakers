@@ -11,6 +11,10 @@
   width: 100%;
 }
 
+.danger {
+  border: 1px solid var(--danger1) !important;
+}
+
 .searchField:hover,
 .searchField:focus-within {
   border-color: var(--gray1);
