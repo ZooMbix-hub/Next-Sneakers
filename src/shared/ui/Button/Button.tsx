@@ -7,7 +7,7 @@ import s from './Button.module.css';
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: string;
   leftIcon?: React.ReactNode;
-  rightIcon ?: React.ReactNode;
+  rightIcon?: React.ReactNode;
 }
 
 export function Button({ children, leftIcon, rightIcon, disabled, ...props }: ButtonProps) {

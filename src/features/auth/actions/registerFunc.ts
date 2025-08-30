@@ -4,8 +4,20 @@ import { z } from 'zod';
 import { AuthError } from 'next-auth';
 import { signIn } from '@/app/lib/auth';
 import { registerScheme } from '../model';
+import { getErrors } from '../helpers';
 
-export async function registerFunc(prevState: string | undefined, formData: FormData) {
+interface Errors {
+  email?: string[];
+  password?: string[];
+  repeatPassword?: string[];
+}
+
+interface RegisterResult {
+  status: 'success' | 'validation error' | 'auth error' | 'unknown error';
+  errors?: Errors;
+}
+
+export async function registerFunc(prevState: string | undefined, formData: FormData): Promise<RegisterResult> {
   try {
     const email = formData.get('email');
     const password = formData.get('password');
@@ -22,9 +34,17 @@ export async function registerFunc(prevState: string | undefined, formData: Form
       password,
       redirect: false
     }); */
+
+    return { status: 'success' };
   } catch (error) {
     if (error instanceof z.ZodError) {
-      console.log('ZodError:', error.issues);
+      return getErrors(error.issues);
     };
+
+    if (error instanceof AuthError) {
+      return { status: 'auth error' };
+    }
+
+    return { status: 'unknown error' };
   }
 }
