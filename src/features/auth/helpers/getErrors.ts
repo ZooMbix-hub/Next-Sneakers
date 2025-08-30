@@ -1,37 +1,17 @@
 import type z from 'zod';
 
-type ErrorKey = 'email' | 'password' | 'repeatPassword';
+export function getErrors<K extends string>(errors: z.core.$ZodIssue[]): Partial<Record<K, string[]>> {
+  const formattedErrors: Partial<Record<K, string[]>> = {};
 
-interface Errors {
-  status: 'validation error';
-  errors: {
-    email?: string[];
-    password?: string[];
-    repeatPassword?: string[];
-  }
-}
-
-const isErrorKey = (key: unknown): key is ErrorKey => {
-  return typeof key === 'string' && ['email', 'password', 'repeatPassword'].includes(key);
-};
-
-export function getErrors(errors: z.core.$ZodIssue[]) {
-  const formattedErrors: Errors = {
-    status: 'validation error',
-    errors: {}
-  };
-
-  errors.forEach((error) => {
+  for (const error of errors) {
     const [key] = error.path;
 
-    if (isErrorKey(key)) {
-      if (formattedErrors.errors[key]) {
-        formattedErrors.errors[key].push(error.message);
-      } else {
-        formattedErrors.errors[key] = [error.message];
-      }
+    if (formattedErrors[key as K]) {
+      formattedErrors[key as K]!.push(error.message);
+    } else {
+      formattedErrors[key as K] = [error.message];
     }
-  });
+  }
 
   return formattedErrors;
-};
+}

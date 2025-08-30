@@ -1,20 +1,20 @@
 'use server';
 
-import { z } from 'zod';
+import { ZodError } from 'zod';
 import { AuthError } from 'next-auth';
 import { signIn } from '@/app/lib/auth';
 import { registerScheme } from '../model';
-import { getErrors } from '../helpers';
+import { getErrors, type StatusResponse } from '../helpers';
 
-interface Errors {
-  email?: string[];
-  password?: string[];
-  repeatPassword?: string[];
-}
+type ErrorKey = 'email' | 'password' | 'repeatPassword';
 
 interface RegisterResult {
-  status: 'success' | 'validation error' | 'auth error' | 'unknown error';
-  errors?: Errors;
+  status: StatusResponse;
+  errors?: {
+    email?: string[];
+    password?: string[];
+    repeatPassword?: string[];
+  };
 }
 
 export async function registerFunc(prevState: string | undefined, formData: FormData): Promise<RegisterResult> {
@@ -37,8 +37,11 @@ export async function registerFunc(prevState: string | undefined, formData: Form
 
     return { status: 'success' };
   } catch (error) {
-    if (error instanceof z.ZodError) {
-      return getErrors(error.issues);
+    if (error instanceof ZodError) {
+      return {
+        status: 'validation error',
+        errors: getErrors<ErrorKey>(error.issues)
+      };
     };
 
     if (error instanceof AuthError) {
