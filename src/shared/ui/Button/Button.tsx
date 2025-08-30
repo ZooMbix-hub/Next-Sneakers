@@ -1,3 +1,6 @@
+'use client';
+
+import cn from 'classnames';
 import { Typography } from '../Typography';
 import s from './Button.module.css';
 
@@ -7,9 +10,9 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   rightIcon ?: React.ReactNode;
 }
 
-export function Button({ children, onClick, leftIcon, rightIcon }: ButtonProps) {
+export function Button({ children, leftIcon, rightIcon, disabled, ...props }: ButtonProps) {
   return (
-    <button className={s.button} onClick={onClick}>
+    <button className={cn(s.button, {[s.isDisabled]: disabled})} {...props} >
       {leftIcon}
       <Typography variant={'bodyLarge'} color={'white'}>
         {children}

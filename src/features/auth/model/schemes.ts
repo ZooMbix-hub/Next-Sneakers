@@ -20,4 +20,3 @@ export const registerScheme = z.object({
     path: ['repeatPassword']
   }
 );
-

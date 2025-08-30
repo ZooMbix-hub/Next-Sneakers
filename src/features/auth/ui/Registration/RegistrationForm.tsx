@@ -48,7 +48,7 @@ export function RegistrationForm() {
           placeholder={'Введите пароль повторно'}
         />
       </div>
-      <Button>
+      <Button disabled={isPending}>
         {'Зарегистрироваться'}
       </Button>
     </form>

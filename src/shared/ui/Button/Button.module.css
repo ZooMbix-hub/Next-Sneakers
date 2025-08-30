@@ -11,3 +11,8 @@
 .button:hover {
   background-color: var(--green2);
 }
+
+.isDisabled, .isDisabled:hover {
+  background-color: var(--gray1);
+  cursor: default;
+}
