@@ -20,3 +20,13 @@ export const registerScheme = z.object({
     path: ['repeatPassword']
   }
 );
+
+export const signInSchema = z.object({
+  email: z.email('Некорректный формат email')
+    .min(1, 'Email обязателен для заполнения')
+    .transform(email => email.toLowerCase().trim()),
+
+  password: z.string()
+    .min(6, 'Пароль должен содержать минимум 6 символов')
+    .max(10, 'Пароль не должен превышать 10 символов')
+});
