@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { AddCart, AddDeferred } from '@/src/features/product';
+import { AddCart, AddDeferred } from '@/src/features/product/ui';
 import { Typography } from '@/src/shared/ui/Typography';
 import { ROUTES } from '@/src/shared/routes';
 import s from './Card.module.css';

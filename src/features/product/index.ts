@@ -1,1 +1,0 @@
-export { AddCart, AddDeferred, SearchProduct } from './ui';

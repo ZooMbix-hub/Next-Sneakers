@@ -1,4 +1,4 @@
-import { SearchProduct } from '@/src/features/product';
+import { SearchProduct } from '@/src/features/product/ui';
 import { Typography } from '@/src/shared/ui/Typography';
 import s from './MainPage.module.css';
 
