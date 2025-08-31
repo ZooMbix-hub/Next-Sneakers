@@ -1,22 +1,8 @@
 import NextAuth from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
 import bcrypt from 'bcrypt';
+import { getUser } from '@/src/entites/user/api';
 import { authConfig } from './auth.config';
-import { db } from './db';
-
-export async function getUser(email: string) {
-  try {
-    const { rows } = await db.query(
-      'SELECT * FROM users WHERE email = $1',
-      [email]
-    );
-
-    return rows[0];
-  } catch (error: unknown) {
-    console.error('Error executing query:', error);
-    return null;
-  }
-}
 
 export const { auth, signIn, signOut, handlers } = NextAuth({
   ...authConfig,
@@ -35,7 +21,7 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
           }
 
           /* TODO: добавить типизацию */
-          const user = await getUser(email as string);
+          const user = await getUser(email as string) as any;
 
           if (!user) {
             throw new Error('Неверный ввод данных');
