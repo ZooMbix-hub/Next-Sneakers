@@ -41,6 +41,7 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
             throw new Error('Неверный ввод данных');
           }
 
+          /* TODO: добавить типизацию */
           const isPasswordValid = await bcrypt.compare(password as string, user.password);
 
           if (!isPasswordValid) {
@@ -49,7 +50,7 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
 
           return user;
         } catch (error) {
-          return null;
+          return error;
         }
       },
     }),

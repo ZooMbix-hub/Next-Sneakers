@@ -4,7 +4,8 @@ import { AuthError } from 'next-auth';
 import { ZodError } from 'zod';
 import { signIn } from '@/app/lib/auth';
 import { signInSchema } from '../model';
-import { getErrors, type StatusResponse } from '../helpers';
+import { getErrors } from '../helpers';
+import type { StatusResponse } from './types';
 
 type ErrorKey = 'email' | 'password';
 
