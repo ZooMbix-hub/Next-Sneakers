@@ -9,19 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "bcrypt": "6.0.0",
     "classnames": "2.5.1",
     "next": "15.4.2",
+    "next-auth": "5.0.0-beta.29",
     "pg": "8.16.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "redis": "5.8.0",
     "typescript": "5",
-    "bcryptjs": "3.0.2",
-    "next-auth": "5.0.0-beta.29",
     "zod": "4.0.17"
   },
   "devDependencies": {
     "@eslint/eslintrc": "3",
+    "@types/bcrypt": "^6.0.0",
     "@types/node": "20",
     "@types/pg": "8.15.5",
     "@types/react": "19",

@@ -3,8 +3,8 @@
 import { AuthError } from 'next-auth';
 import { ZodError } from 'zod';
 import { signIn } from '@/app/lib/auth';
+import { signInSchema } from '../model';
 import { getErrors, type StatusResponse } from '../helpers';
-import { signInSchema } from '../model/schemes';
 
 type ErrorKey = 'email' | 'password';
 
