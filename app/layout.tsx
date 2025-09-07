@@ -1,10 +1,11 @@
 import { Inter } from 'next/font/google';
-import { PublicLayout } from '@/src/app/layouts/PublicLayout/PublicLayout';
-import './globals.css';
 import { SessionProvider } from 'next-auth/react';
+import { PublicLayout } from '@/src/app/layouts/PublicLayout/PublicLayout';
 import { auth } from './lib/auth';
+import './globals.css';
 
 const inter = Inter({subsets: ['latin']});
+
 export default async function RootLayout({
   children,
 }: Readonly<{

@@ -25,9 +25,11 @@ export function Card({id, name, price, imageURL, inDeffered, inCart}: CardProps)
         height={135}
         className={s.image}
       />
-      <Typography>
-        {name}
-      </Typography>
+      <div className={s.name}>
+        <Typography>
+          {name}
+        </Typography>
+      </div>
       <div className={s.footer}>
         <div className={s.price}>
           <Typography variant={'caption'} color={'gray1'}>
