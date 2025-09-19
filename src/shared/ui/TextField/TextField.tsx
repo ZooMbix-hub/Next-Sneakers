@@ -4,10 +4,13 @@ import React, { useRef } from 'react';
 import cn from 'classnames';
 import s from './TextField.module.css';
 
-interface TextFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  icon?: React.ReactNode;
+type InputPropsDefault = 'name' | 'type' | 'onChange' | 'required' | 'defaultValue' | 'placeholder' | 'inputMode';
+
+interface TextFieldProps extends Pick<React.InputHTMLAttributes<HTMLInputElement>, InputPropsDefault> {
   isFullWidth?: boolean;
   isDanger?: boolean;
+  prefixNode?: React.ReactNode;
+  postfixNode?: React.ReactNode;
 }
 
 export function TextField(props: TextFieldProps) {
@@ -19,7 +22,8 @@ export function TextField(props: TextFieldProps) {
     defaultValue,
     placeholder,
     inputMode,
-    icon,
+    prefixNode,
+    postfixNode,
     isFullWidth = true,
     isDanger
   } = props;
@@ -34,9 +38,8 @@ export function TextField(props: TextFieldProps) {
       })}
       onClick={() => inputRef.current?.focus()}
     >
-      {icon}
+      {prefixNode}
       <input
-        id={'password'}
         name={name}
         type={type}
         onChange={onChange}
@@ -47,6 +50,7 @@ export function TextField(props: TextFieldProps) {
         className={s.field}
         ref={inputRef}
       />
+      {postfixNode}
     </div>
   );
 }

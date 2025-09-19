@@ -11,6 +11,8 @@ import { Search } from './icons/Search';
 import { Close } from './icons/Close';
 import { Key } from './icons/Key';
 import { Mail } from './icons/Mail';
+import { Eye } from './icons/Eye';
+import { EyeSlash } from './icons/EyeSlash';
 
 export const Icon = {
   Basket,
@@ -25,7 +27,9 @@ export const Icon = {
   ChevronLeft,
   Close,
   Key,
-  Mail
+  Mail,
+  Eye,
+  EyeSlash
 };
 
 export type IconType = keyof typeof Icon;

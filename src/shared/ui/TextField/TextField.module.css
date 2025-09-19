@@ -1,6 +1,7 @@
 .searchField {
   padding: 15px 18px;
   display: flex;
+  gap: 10px;
   border: 1px solid var(--gray0);
   border-radius: 10px;
   cursor: pointer;
@@ -21,7 +22,6 @@
 }
 
 .searchField svg {
-  margin-right: 10px;
   color: var(--gray1);
   flex: none;
 }

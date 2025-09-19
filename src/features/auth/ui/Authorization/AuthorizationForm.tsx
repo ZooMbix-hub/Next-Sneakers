@@ -7,6 +7,7 @@ import { Button } from '@/src/shared/ui/Button';
 import { Icon } from '@/src/assets';
 import { signInFunc } from '../../actions';
 import s from './Authorization.module.css';
+import { PasswordField } from '@/src/shared/ui/PasswordField';
 
 export function AuthorizationForm() {
   const [errorMessage, formAction, isPending] = useActionState(
@@ -23,7 +24,7 @@ export function AuthorizationForm() {
         <TextField
           name={'email'}
           inputMode={'email'}
-          icon={<Icon.Mail />}
+          prefixNode={<Icon.Mail />}
           required={true}
           placeholder={'Введите email'}
           isDanger={Boolean(errorMessage?.errors?.email)}
@@ -44,11 +45,8 @@ export function AuthorizationForm() {
         <Typography variant={'caption'}>
           {'Пароль'}
         </Typography>
-        <TextField
+        <PasswordField
           name={'password'}
-          type={'password'}
-          icon={<Icon.Key />}
-          required={true}
           placeholder={'Введите пароль'}
           isDanger={Boolean(errorMessage?.errors?.password)}
         />

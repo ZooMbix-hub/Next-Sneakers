@@ -23,7 +23,7 @@ export function RegistrationForm() {
         <TextField
           name={'email'}
           inputMode={'email'}
-          icon={<Icon.Mail />}
+          prefixNode={<Icon.Mail />}
           required={true}
           placeholder={'Введите email'}
           isDanger={Boolean(errorMessage?.errors?.email)}
@@ -47,7 +47,7 @@ export function RegistrationForm() {
         <TextField
           name={'password'}
           type={'password'}
-          icon={<Icon.Key />}
+          prefixNode={<Icon.Key />}
           required={true}
           placeholder={'Введите пароль'}
           isDanger={Boolean(errorMessage?.errors?.password)}
@@ -71,7 +71,7 @@ export function RegistrationForm() {
         <TextField
           name={'repeatPassword'}
           type={'password'}
-          icon={<Icon.Key />}
+          prefixNode={<Icon.Key />}
           required={true}
           placeholder={'Введите пароль повторно'}
           isDanger={Boolean(errorMessage?.errors?.repeatPassword)}

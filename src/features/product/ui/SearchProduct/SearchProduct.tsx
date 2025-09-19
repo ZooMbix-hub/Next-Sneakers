@@ -31,7 +31,7 @@ export function SearchProduct() {
     <TextField
       onChange={handleSearch}
       defaultValue={searchParams?.get('filter')?.toString()}
-      icon={<Icon.Search />}
+      prefixNode={<Icon.Search />}
       placeholder={'Поиск'}
       isFullWidth={false}
       inputMode={'search'}
