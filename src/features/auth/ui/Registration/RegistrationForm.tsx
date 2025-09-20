@@ -3,6 +3,7 @@
 import { useActionState } from 'react';
 import { Typography } from '@/src/shared/ui/Typography';
 import { TextField } from '@/src/shared/ui/TextField';
+import { PasswordField } from '@/src/shared/ui/PasswordField';
 import { Button } from '@/src/shared/ui/Button';
 import { Icon } from '@/src/assets';
 import { registerFunc } from '../../actions';
@@ -44,11 +45,8 @@ export function RegistrationForm() {
         <Typography variant={'caption'} weight={'medium'}>
           {'Пароль'}
         </Typography>
-        <TextField
+        <PasswordField
           name={'password'}
-          type={'password'}
-          prefixNode={<Icon.Key />}
-          required={true}
           placeholder={'Введите пароль'}
           isDanger={Boolean(errorMessage?.errors?.password)}
         />
@@ -68,11 +66,8 @@ export function RegistrationForm() {
         <Typography variant={'caption'} weight={'medium'}>
           {'Повторный пароль'}
         </Typography>
-        <TextField
+        <PasswordField
           name={'repeatPassword'}
-          type={'password'}
-          prefixNode={<Icon.Key />}
-          required={true}
           placeholder={'Введите пароль повторно'}
           isDanger={Boolean(errorMessage?.errors?.repeatPassword)}
         />
